@@ -1,0 +1,908 @@
+*,
+*::after,
+*::before{
+   box-sizing: border-box;
+}
+
+body{
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 140%; 
+   color: #1F1E1E; 
+}
+
+/* !ссылки */
+a{
+   text-decoration: none;  /** убирает подчеркивание ссылок */
+   color: inherit; /** изменяет цвет ссылки с синего на родительский */
+
+}
+
+/*! заготовка для title, которая будет всегда использоваться */
+.title {
+   text-align: center;
+   font-weight: 500;
+   font-size: 36px;
+   line-height: 130%;
+}
+
+/* !заготовка container - служит оберткой. Указываются только размеры */
+.container{
+   max-width: 1140px; /** появляется возможность к адаптиву в отличие от  width: 1120px. Обязательно добавляем расстояние padding: 0 10px*/
+   margin: 0 auto; /** контейнер размещается по центру */
+   padding: 0 10px; /** для того, чтобы не маленьких экранах наш контейнер не прилипал к краям экрана и всегда имел рассотояние от него в 10px */
+}
+
+.header{
+   background-image: url(../images/header-bg.jpg);
+   min-height: 100vh; /** картинка занимает 100% текущей высоты области просмотра. Min означает, что это минимальная высота и при необходимости эта величиа может увеличиться. Здесь это можно не писать так как header__inner растянет нашу область */
+   background-repeat: no-repeat; /** чтобы картинка не размножалась на больших экранах */
+   background-position: top center; /** картинка занимает всегда центральную область */
+   background-size: cover; /** картинка расплывается и максимально занимает весь объем */
+}
+
+.header__inner{
+   min-height: 100vh; /** картинка занимает 100% текущей высоты области просмотра. Min означает, что это минимальная высота и при необходимости эта величиа может увеличиться */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.header__top{
+   display: flex;
+   justify-content: space-between;
+   align-items: center; /* выравниваем наши горизонтальные элементы по центру */
+   flex-wrap: wrap;
+   padding: 16px 0 49px;
+}
+
+.menu{
+   width: 100%; /* задали для того, чтобы меню спустилось вниз*/
+   border-top: 1px solid #FFFFFF;
+   border-bottom: 1px solid #FFFFFF;
+   margin-top: 15px;
+   padding: 27px 0 24px;
+}
+
+.menu__list{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   font-size: 16px;
+   color:#FFFFFF;
+}
+
+.header__phone{
+   font-weight: 700;
+   color: #FFFFFF;
+   font-size: 16px;
+   line-height: 130%;
+}
+
+.header__phone-number{
+   font-weight: 400;
+   margin-left: 19px;
+   padding: 12px 31px 13px;
+   background-color: #886239;
+   border-radius: 22px;
+}
+
+
+.header__title{
+   font-family: 'PT Serif', serif;
+   font-weight: 700;
+   font-size: 90px; 
+   line-height: 130%;
+   text-align: center;
+   margin-bottom: auto; /** максимально отталкивается от низа и прижимается  к верху*/
+}
+
+.header__descr{
+   font-weight: 700;
+   font-size: 20px;
+   max-width: 420px;
+   margin-bottom: 20px;
+}
+
+.header__btn{
+   display: inline-block;  /** так как по умолчанию это ссылка - а это строчный элемент*/
+   background-color: #886239;
+   max-width: 250px;
+   border-radius: 30px;
+   padding: 19px 54px 20px 55px;
+   color: #FFFFFF;
+   font-size: 18px;
+   margin-bottom: 20px;
+}
+
+.header__arrow{
+   text-align: center; /** чтобы наша стрелочка стала по центру */
+   margin-bottom: 15px;
+}
+
+.direction{
+   padding: 100px 0;
+}
+
+.direction__inner{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 32px
+}
+
+.direction__img{
+   display: block; /** убирает пробелы в картинках между картинкой и названием. По умолчанию они строчные - а в строчных всегда есть  пробел*/
+}
+
+.description__text{
+   font-size: 16px;
+   border: 1px solid #D9D9DE;
+   border-top: none;
+   padding: 10px 19px 14px;
+}
+
+.travel-info{
+   background-image: url(../images/travel-info-bg.jpg);
+   background-repeat: no-repeat; /** это обязательно прописывается если ставится фоновое изображение */ 
+   background-size: cover; /** это обязательно прописывается если ставится фоновое изображение */
+   background-position: top center ; /** это обязательно прописывается если ставится фоновое изображение */
+   padding: 30px 0 50px;
+   margin-bottom: 100px;
+}
+
+/*! для отдельного частного случая travel-info__title */
+.travel-info__title {
+   color: #FFFFFF;
+   margin-bottom: 50px;
+}
+
+.travel-info__items{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 54px 67px;  /** расстрояние между блоками по строке - 54px, по столбцам - 67px */ 
+}
+
+.travel-info__img{
+   margin-bottom: 15px;
+}
+
+.travel-info__text{
+   color: #FFFFFF;
+   font-size: 16px;
+   line-height: 130%;
+}
+
+.popular{
+   padding: 100px 0;
+}
+
+.popular__title{
+   margin-bottom: 40px;
+}
+.popular__items{
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(4, 1fr );
+   grid-gap: 32px;
+   padding-bottom: 80px;
+   border-bottom: 1px solid #D9D9DE; /**линия по макету*/
+}
+
+.popular__link{
+   padding: 16px 24px 19px;
+   color: #FFFFFF;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   background-position: top center;
+   min-height: 256px; /** внимательно с высотой, задание строго height приведет не к тому!!! */
+   line-height: 130%; 
+}
+
+/* !нам нужно обратиться к 3 и 6 элементу в классе popular_link, чтобы изменить их размеры */
+.popular__link:nth-child(3),
+.popular__link:nth-child(6){
+   grid-column: span 2; /**начинается там где он начинается и занимает 2 колонки */
+   grid-row: span 2; /**начинается там где он начинается и занимает 2 строки */
+}
+
+.popular__link-title{
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+
+.popular__link-title--big{
+   font-size: 24px;
+}
+
+.popular__price{
+   font-weight: bold;
+   font-size: 16px;
+   margin-top: auto; /**чтобы поднять строки со страной и временем */
+}
+
+.popular__country,
+.popular__time{
+   margin-bottom: 15px;
+}
+
+.map{
+   padding-bottom: 100px;
+}
+
+.map__title{
+   margin-bottom: 46px;
+}
+
+.about{
+   padding-bottom: 100px;
+}
+
+.about__inner{
+   display: grid;
+   grid-template-columns: 448px 640px;
+   grid-gap: 32px;
+}
+
+.about__title{
+   text-align: left;
+   margin-bottom: 25px;
+}
+
+.about__text{
+   margin-bottom: 34px;
+}
+
+.about__link{
+   font-size: 16px;
+   line-height: 19px;
+   color: #C4C4C4;
+   text-decoration: underline; /** подчёркнутый текст */
+}
+
+.about__popup{
+   background-image: url(../images/video-bg.jpg);
+   background-repeat: no-repeat; /** это обязательно прописывается если ставится фоновое изображение */ 
+   background-size: cover; /** это обязательно прописывается если ставится фоновое изображение */
+   background-position: top center ; /** это обязательно прописывается если ставится фоновое изображение */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.gallery{
+   padding: 50px 0 105px;
+   background: #886239;
+   color: #FFFFFF;
+}
+
+.gallery__top{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 40px;
+   padding-right: 160px;
+}
+
+.gallery__link{
+   font-size: 16px;
+   line-height: 19px;
+   text-decoration: underline;
+}
+
+.gallery__item-inner{
+   display: grid;
+   grid-template-columns: repeat(3,  1fr);
+   grid-gap: 32px;
+}
+
+.slick-btn{
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   position: absolute;
+   top: -85px;
+   right: 0;
+}
+
+.slick-prev{
+   right: 60px;
+}
+
+.tour{
+   padding: 100px 0;
+
+}
+
+.tour__title{
+   margin-bottom: 77px;
+}
+
+.tour__box{
+   column-count: 2; /**разбивает содержимое элемента на заданное число столбцов. Удобно работать с текстом */
+   column-gap: 46px; /**расстояние между столбцами */
+   border-bottom: 1px solid #D9D9DE;
+   padding-bottom: 50px;
+   margin-bottom: 44px;
+}
+
+.tour__text{
+   margin-bottom: 25px;
+}
+
+.tour__text span {
+   font-weight: 700;
+}
+
+.tour__info{
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 70px;
+}
+
+.tour__info-item{
+   font-weight: bold;
+   font-size: 58px;
+   font-family: 'PT Serif', serif;
+   color: #886239;
+   text-align: center;
+   line-height: 60px;
+}
+
+.tour__info-text{
+   font-family: 'Roboto', sans-serif;
+   color: #1F1E1E;
+   font-size: 20px;
+   font-weight: 500;
+   line-height: 25px;
+}
+
+.booking{
+   background: #EAEAEA;
+   padding: 75px 0;
+}
+
+.booking__title{
+   margin-bottom: 43px;
+}
+
+.booking__form{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   max-width: 830px;
+   margin: 0 auto;
+}
+
+.booking__input{
+   width: 256px;
+   height: 44px;
+   border: 1px solid #D9D9DE;
+   padding: 11px 14px 12px;
+   margin-bottom: 28px;
+   font-size: 16px;
+}
+
+/**для изменения placeholder */
+.booking__input::placeholder,
+.booking__area::placeholder {
+   font-size: 16px;
+   font-family: 'Roboto', sans-serif;
+   color: #C4C4C4;
+}
+
+.booking__area{
+   width: 100%;
+   padding: 14px;
+   border: 1px solid #D9D9DE;
+   height: 112px;
+   resize: none; /**чтобы не было у textarea в правом нижнем углу треугольничка*/
+   margin-bottom: 67px;
+}
+
+.booking__btn{
+   background: #886239;
+   border-radius: 30px;
+   border: none;
+   line-height: 21px;
+   font-size: 18px;
+   color: #FFFFFF;
+   padding: 19px 65px 20px;
+   cursor: pointer;
+}
+
+.booking__label{
+   font-size: 16px;
+   line-height: 130%;
+   text-decoration: underline;
+   display: flex;
+   align-items: center;
+}
+
+.booking__check{
+   /**чтобы запрятать квадратик у checkbox*/
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   clip: rect(0 0 0 0);
+   padding-left: 45px;
+}
+/**рисуем наш квадратик с нужными стилями*/
+.booking__check-style{
+   width: 26px;
+   height: 26px;
+   border: 2px solid #C4C4C4;
+   border-radius: 2px;
+   position: absolute;
+   margin-left: -45px;
+}
+
+/**чтобы нарисовать "галочку" в нашем нарисованном квадратике*/
+.booking__check:checked + .booking__check-style::before {
+   content: '';
+   position: absolute;
+   width: 16px;
+   height: 16px;
+   background-color: #C4C4C4;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.footer{
+   background: #1F1E1E;
+   padding: 80px 0;
+}
+
+.footer__logo{
+   text-align: center;
+   margin-bottom: 70px;
+}
+
+.footer__box{
+   display: flex;
+   justify-content: space-between;
+   color: #FFFFFF;
+   font-size: 14px;
+   line-height: 130%;
+   max-width: 830px;
+   margin: 0 auto;
+}
+
+.footer__info {
+   width: 225px;
+}
+.footer__box-title {
+   margin-bottom: 7px;
+   font-weight: 500;
+}
+.footer__copy {
+   margin-bottom: 3px;
+   opacity: 0.8;
+}
+.footer__link {
+   text-decoration: underline;
+   opacity: 0.8;
+}
+.footer__address {
+   width: 165px;
+}
+.footer__address-text {
+   opacity: 0.8;
+}
+.footer__contacts {
+   width: 210px;
+}
+.footer__phone {
+   opacity: 0.8;
+}
+.footer__mail {
+   opacity: 0.8;
+   display: block;
+}
+
+.menu__btn{
+   display: none;
+}
+
+
+/*! min-width - означает, что свойство выполнится, если экран больше 1200px */
+/*! max-width - означает, что свойство выполнится, если экран меньше 1200px */
+@media (max-width: 800px){
+   .header__phone span{
+      display: none;
+   }
+}
+
+@media (max-width: 560px){
+   .header__title{
+      font-size: 50px;
+   }
+
+   .menu__btn{
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+      border: none;
+      padding: 0;
+      background-color: transparent; /**прозрачность*/
+      position: absolute;
+      right: 10px;
+      top: 107px;
+   }
+
+   .menu__btn::after,
+   .menu__btn::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: 2px;
+      background-color: #fff;
+   }
+
+   .menu__btn::before {
+      top: 0;
+   }
+
+   .menu__btn::after{
+      bottom: 0;
+   }
+
+   .menu__btn span{
+      display: block;
+      height: 2px;
+      background-color: #FFFFFF;
+   }
+
+   .menu__list{
+      transform: translateY(-1000%);
+   }
+
+   .logo{
+      width: 100%;
+      margin-bottom: 30px;
+      text-align: center;
+   }
+
+   .header__phone-number{
+      /* justify-content: center;    */
+      margin-left: 0;
+   }
+
+   .menu{
+      border: none;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
